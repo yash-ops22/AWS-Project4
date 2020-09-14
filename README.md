@@ -52,7 +52,9 @@ Terraform code for our VPC....
       }
     }  
     
-    
+<img src="vpc.png">  
+ 
+ 
 # Step 3:
 
 Here in this step we are creating two subnets one of them is public and the other is private. Private Subnet will store our private resources and data which is not accessible to outside world. Public subnet will contain the resources which will we accessible to outside world for their use.
@@ -70,6 +72,9 @@ Public Subnet...
         }
       }
       
+<img src="subnetpub.png">       
+      
+      
   Private Subnet
 
     resource "aws_subnet" "private-subnet1" {
@@ -80,6 +85,8 @@ Public Subnet...
       Name = "private-subnet1"
       }
     }    
+    
+<img src="prisub.png">      
     
 # Step 4:
 
@@ -92,6 +99,9 @@ Creating a public facing internet gateway to connect our Network to the internet
       Name = "cloud4-gateway"
        }
      }
+     
+<img src="gateway.png">
+
 
 
 # Step 5:
@@ -105,6 +115,9 @@ Creating a NAT gateway to connect our VPC/Network to the internet world  and att
         Name = "natgw"
         }
      }
+          
+<img src="natgate.png">     
+
 
 # Step 6:
 
@@ -181,6 +194,10 @@ One of the Security group will be public which will have the connectivity to the
       }
     }
 
+<img src="sgwp.png">     
+
+
+
 Now launching our Public instance...
 
 Wordpress instance which will have connectivity to the outside world...
@@ -197,6 +214,9 @@ Wordpress instance which will have connectivity to the outside world...
        Name = "wp-aws"
       }
     }
+
+<img src="wpins.png">     
+
 
 # Step 8:
 
@@ -231,6 +251,11 @@ Other Security Group will we private to launch our private instance which only h
        }
     }
     
+<img src="sgprivate.png">     
+    
+    
+    
+    
  Our Private MySql server which will store our private data...
 
     resource "aws_instance" "mysql-p" {
@@ -247,7 +272,7 @@ Other Security Group will we private to launch our private instance which only h
 
 
 
-
+<img src="myins.png">     
 
 
 
