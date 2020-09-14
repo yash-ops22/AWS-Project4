@@ -119,6 +119,12 @@ Creating a NAT gateway to connect our VPC/Network to the internet world  and att
 <img src="natgate.png">     
 
 
+
+Creating Elastic IP
+<img src="eip.png">
+
+
+
 # Step 6:
 
 Associating this routing table with our public subnet for availability or accessibility to outside world.
@@ -286,6 +292,15 @@ After we have done with our terraform code, launching the resources using comman
      terrform apply --auto-approve
 
 
+<img src="apply.png"
+
+
+
+After launching wordpress over the aws we can connect to our instance throught its public ip
+<img src="site1.png">
+
+
+
 
 After we have completed with our work we can destroy all our resources with command....
 
@@ -298,9 +313,7 @@ After we have completed with our work we can destroy all our resources with comm
 
 
 
-
-
-
+THANK YOU ALL
 
 
 
