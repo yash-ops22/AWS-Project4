@@ -52,6 +52,9 @@ Terraform code for our VPC....
       }
     }  
     
+    
+# Step 3:
+
 Here in this step we are creating two subnets one of them is public and the other is private. Private Subnet will store our private resources and data which is not accessible to outside world. Public subnet will contain the resources which will we accessible to outside world for their use.
 
 Public Subnet...    
@@ -78,4 +81,65 @@ Public Subnet...
       }
     }    
     
-    
+# Step 4:
+
+Creating a public facing internet gateway to connect our Network to the internet world and also we have to attach this gateway to our VPC.
+
+    resource "aws_internet_gateway" "cloud4-gateway" {
+    vpc_id = aws_vpc.cloud4-vpc.id
+
+    tags = {
+      Name = "cloud4-gateway"
+       }
+     }
+
+Associating this routing table with our public subnet for availability or accessibility to outside world.
+
+    resource "aws_route_table" "rout-table" {
+    vpc_id = aws_vpc.cloud4-vpc.id
+
+     route {
+        cidr_block = "0.0.0.0/0"
+       gateway_id = aws_internet_gateway.cloud4-gateway.id
+     }
+
+      tags = {
+       Name = "rout-table"
+       }
+    }
+
+Route Table Association
+
+     resource "aws_route_table_association" "r-tabl-associate" {
+     subnet_id      = aws_subnet.public-subnet2.id
+     route_table_id = aws_route_table.rout-table.id
+    }
+
+# Step 5:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
