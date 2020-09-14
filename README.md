@@ -292,7 +292,7 @@ After we have done with our terraform code, launching the resources using comman
      terrform apply --auto-approve
 
 
-<img src="apply.png"
+<img src="apply.png">
 
 
 
