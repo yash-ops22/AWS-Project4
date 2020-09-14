@@ -275,9 +275,24 @@ Other Security Group will we private to launch our private instance which only h
 <img src="myins.png">     
 
 
+We can check if our code is properly working or not with command...
+
+    terraform validate
+    
+    
+    
+After we have done with our terraform code, launching the resources using command...
+
+     terrform apply --auto-approve
 
 
 
+After we have completed with our work we can destroy all our resources with command....
+
+  terraform destroy --auto-approve
+  
+  
+  <img src="destroy.png"> 
 
 
 
