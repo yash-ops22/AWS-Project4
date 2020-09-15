@@ -226,7 +226,8 @@ Wordpress instance which will have connectivity to the outside world...
 
 # Step 8:
 
-Other Security Group will we private to launch our private instance which only have connectivity to our public instance...
+Other Security Group will we private to launch our private instance which only
+have connectivity to our public wordpress instance...
 
     resource "aws_security_group" "sgroupprivate" {
      name        = "sgroupprivate"
